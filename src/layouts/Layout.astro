@@ -1,0 +1,130 @@
+---
+import ViewTransitions from "astro/components/ViewTransitions.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Portfolio of Imran Kabir" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="bg-slate-900">
+    <slot />
+
+    <footer class="relative py-12" style={{ background: "rgb(2, 3, 5)" }}>
+      {/* Background grid pattern matching other sections */}
+      <div
+        class="absolute inset-0 bg-[linear-gradient(rgba(32,51,64,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(32,51,64,0.05)_1px,transparent_1px)] bg-[size:44px_44px]"
+      >
+      </div>
+
+      {/* Gradient border top */}
+      <div
+        class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"
+      >
+      </div>
+
+      {/* Animated glow effects */}
+      <div
+        class="absolute top-0 left-1/4 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"
+      >
+      </div>
+      <div
+        class="absolute bottom-0 right-1/4 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl"
+      >
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-5xl mx-auto">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm"
+          >
+            <div class="group">
+              <div
+                class="px-6 py-3 bg-gray-800/30 border border-gray-700/30 rounded-lg hover:border-blue-500/30 hover:bg-blue-500/5 transition-all duration-300"
+              >
+                <p
+                  class="text-gray-400 group-hover:text-gray-300 transition-colors"
+                >
+                  &copy; 2024 Imran Kabir. All rights reserved.
+                </p>
+              </div>
+            </div>
+
+            <div class="group">
+              <div
+                class="px-6 py-3 bg-gray-800/30 border border-gray-700/30 rounded-lg hover:border-blue-500/30 hover:bg-blue-500/5 transition-all duration-300"
+              >
+                <div
+                  class="flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors"
+                >
+                  <span>Crafted with</span>
+                  <span class="text-red-400 animate-pulse">❤</span>
+                  <span>using</span>
+                  <a
+                    href="https://astro.build"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    Astro
+                  </a>
+                  <span>&</span>
+                  <a
+                    href="https://react.dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    React
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <style is:global>
+      :root {
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+        --accent-dark: 49, 10, 101;
+        --accent-gradient: linear-gradient(
+          45deg,
+          rgb(var(--accent)),
+          rgb(var(--accent-light)) 30%,
+          white 60%
+        );
+      }
+      html {
+        font-family: system-ui, sans-serif;
+        background: #13151a;
+      }
+      code {
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
+      }
+    </style>
+  </body>
+</html>

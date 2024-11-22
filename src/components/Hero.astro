@@ -1,0 +1,15 @@
+---
+import HeroBackground from "./react/HeroBackground";
+import HeroAnimations from "./react/HeroAnimations";
+---
+
+<section
+  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900 isolate"
+  id="intro"
+>
+  <div class="absolute inset-0">
+    <HeroBackground client:load />
+  </div>
+
+  <HeroAnimations client:load />
+</section>
