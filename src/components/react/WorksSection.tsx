@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
 // Import all project images
-import citySparkImage from "../../assets/city-spark-hero.png";
-import londonHomeSafetyImage from "../../assets/london-home-safety-hero.png";
-import easyTaxReturnImage from "../../assets/easy-tax-return-hero.png";
-import homeletServicesImage from "../../assets/homelet-services-hero.png";
-import partsYardImage from "../../assets/partsyard-hero.png";
-import pjRenovationImage from "../../assets/pj-renovation-hero.png";
-import purePowerImage from "../../assets/pure-power-hero.png";
+import citySparkImage from "../../assets/city-spark-hero-min.png";
+import londonHomeSafetyImage from "../../assets/london-home-safety-hero-min.png";
+import easyTaxReturnImage from "../../assets/easy-tax-return-hero-min.png";
+import homeletServicesImage from "../../assets/homelet-services-hero-min.png";
+import partsYardImage from "../../assets/partsyard-hero-min.png";
+import pjRenovationImage from "../../assets/pj-renovation-hero-min.png";
+import purePowerImage from "../../assets/pure-power-hero-min.png";
 
 type Project = {
   id: number;
