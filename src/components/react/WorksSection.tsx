@@ -1,12 +1,21 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+
+// Import all project images
+import citySparkImage from "../../assets/city-spark-hero.png";
+import londonHomeSafetyImage from "../../assets/london-home-safety-hero.png";
+import easyTaxReturnImage from "../../assets/easy-tax-return-hero.png";
+import homeletServicesImage from "../../assets/homelet-services-hero.png";
+import partsYardImage from "../../assets/partsyard-hero.png";
+import pjRenovationImage from "../../assets/pj-renovation-hero.png";
+import purePowerImage from "../../assets/pure-power-hero.png";
 
 type Project = {
   id: number;
   title: string;
   description: string;
-  image: string;
+  image: ImageMetadata; // Using any for image imports
   techStack: string[];
   liveUrl: string;
   adminUrl?: string;
@@ -21,7 +30,7 @@ const WorksSection = () => {
       title: "City Spark",
       description:
         "A modern e-commerce platform with product categorization, search functionality and more",
-      image: "/src/assets/city-spark-hero.png",
+      image: citySparkImage,
       techStack: [
         "Next.js",
         "TypeScript",
@@ -39,7 +48,7 @@ const WorksSection = () => {
       title: "London Home Safety",
       description:
         "A web application designed to provide safety inspections, certifications & related services",
-      image: "/src/assets/london-home-safety-hero.png",
+      image: londonHomeSafetyImage,
       techStack: [
         "Next.js",
         "TypeScript",
@@ -61,7 +70,7 @@ const WorksSection = () => {
       title: "Easy Tax Return",
       description:
         "A digital solution for filling out and managing individual tax returns",
-      image: "/src/assets/easy-tax-return-hero.png",
+      image: easyTaxReturnImage,
       techStack: [
         "Next.js",
         "TypeScript",
@@ -75,11 +84,11 @@ const WorksSection = () => {
       liveUrl: "https://easytaxreturn.com.bd",
     },
     {
-      id: 7,
-      title: "Parts Yard",
+      id: 4,
+      title: "PartsYard",
       description:
         "A motorcycle parts manufacturer platform with integrated payment system",
-      image: "/src/assets/partsyard-hero.png",
+      image: partsYardImage,
       techStack: [
         "React",
         "MongoDB",
@@ -88,37 +97,44 @@ const WorksSection = () => {
         "Tailwind CSS",
         "Express",
       ],
-      liveUrl: "https://partsyard.web.app",
+      liveUrl: "#",
     },
     {
       id: 5,
       title: "Homelet Services",
       description:
         "A comprehensive property service platform with integrated contact form and spam protection",
-      image: "/src/assets/homelet-services-hero.png",
-      techStack: ["Astro", "Tailwind CSS", "React Hook Form", "Zod"],
+      image: homeletServicesImage,
+      techStack: [
+        "Astro",
+        "Tailwind CSS",
+        "React Hook Form",
+        "Zod",
+        "Honeypot",
+      ],
       liveUrl: "https://homeletservices.co.uk",
     },
     {
-      id: 5,
+      id: 6,
       title: "Pure Power Electrical",
       description:
         "An electrician portfolio showcasing services and previous works",
-      image: "/src/assets/pure-power-hero.png",
+      image: purePowerImage,
       techStack: ["HTML", "CSS", "WordPress", "PHP"],
       liveUrl: "https://purepowerelectrical.co.uk",
     },
     {
-      id: 6,
+      id: 7,
       title: "PJ Renovation",
       description:
         "A construction company portfolio featuring projects and services",
-      image: "/src/assets/pj-renovation-hero.png",
+      image: pjRenovationImage,
       techStack: ["HTML", "CSS", "WordPress", "PHP"],
       liveUrl: "https://pjrenovation.co.uk",
     },
   ];
 
+  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -146,6 +162,7 @@ const WorksSection = () => {
       className="min-h-screen relative overflow-hidden py-24"
       style={{ background: "rgb(2, 3, 5)" }}
     >
+      {/* Background grid decoration */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(32,51,64,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(32,51,64,0.05)_1px,transparent_1px)] bg-[size:44px_44px]" />
 
       <div className="container mx-auto px-4">
@@ -156,6 +173,7 @@ const WorksSection = () => {
           viewport={{ once: true }}
           className="max-w-6xl mx-auto space-y-16"
         >
+          {/* Section Header - Right aligned as in original */}
           <motion.div variants={itemVariants} className="space-y-6 text-right">
             <div className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1 ml-auto">
               <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
@@ -164,18 +182,21 @@ const WorksSection = () => {
 
             <h2 className="text-4xl font-bold text-gray-100">
               Recent{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Works
+              <span className="relative">
+                <span className="relative z-10 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  Works
+                </span>
+                <motion.span
+                  className="absolute bottom-0 left-0 w-full h-2 bg-blue-500/20 rounded-full blur-sm"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "100%" }}
+                  transition={{ duration: 1 }}
+                />
               </span>
             </h2>
-
-            {/* Add this line */}
-            <p className="text-gray-400 text-right">
-              All graphical assets including logos, banners, posters, and UI/UX
-              designs were created by me.
-            </p>
           </motion.div>
 
+          {/* Projects Grid - 2 columns as in original */}
           <motion.div
             variants={itemVariants}
             className="grid gap-8 lg:grid-cols-2"
@@ -189,15 +210,17 @@ const WorksSection = () => {
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.2 }}
               >
+                {/* Image with overlay gradient */}
                 <div className="aspect-video relative overflow-hidden">
                   <img
-                    src={project.image}
+                    src={project.image.src}
                     alt={project.title}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent" />
                 </div>
 
+                {/* Content */}
                 <div className="p-6 space-y-4 relative z-20">
                   <h3 className="text-2xl font-semibold text-gray-100">
                     {project.title}
@@ -205,6 +228,7 @@ const WorksSection = () => {
 
                   <p className="text-gray-400">{project.description}</p>
 
+                  {/* Tech Stack - Show all tags */}
                   <div className="flex flex-wrap gap-2">
                     {project.techStack.map((tech) => (
                       <span
@@ -216,6 +240,7 @@ const WorksSection = () => {
                     ))}
                   </div>
 
+                  {/* Link */}
                   <div className="flex items-center gap-4 pt-4 relative z-30">
                     <motion.a
                       href={project.liveUrl}
@@ -230,6 +255,7 @@ const WorksSection = () => {
                   </div>
                 </div>
 
+                {/* Subtle hover effect overlay */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10" />
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity blur-sm" />
