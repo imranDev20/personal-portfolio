@@ -35,6 +35,29 @@ export const timeline: Timeline = {
   work: [
     {
       type: "work",
+      company: "Spiderbyte IT Limited",
+      position: "Co-Founder & Full Stack Developer",
+      period: "June 2024 - Present",
+      description:
+        "Developing versatile web applications including e-commerce platforms with complex categorization systems, intuitive templating, admin dashboards, a home safety and inspection service booking system, and an automatic tax return calculation tool.",
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Prisma",
+        "React Query",
+        "Zustand",
+      ],
+      highlights: [
+        "Built e-commerce platform with advanced product categorization",
+        "Developed home safety inspection service booking website",
+        "Created automated tax return calculation system",
+        "Implemented comprehensive admin dashboard and reporting tools",
+      ],
+    },
+    {
+      type: "work",
       company: "Kiraj Agromart",
       position: "Associate Software Engineer",
       period: "Sep 2023 - May 2024",

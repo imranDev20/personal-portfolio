@@ -73,7 +73,7 @@ const HeroAnimations = () => {
 
       <motion.div variants={itemVariants} className="flex justify-center">
         <motion.a
-          href="https://drive.google.com/your-resume-link" // Replace with your actual Google Drive link
+          href="https://drive.google.com/file/d/1lYbtVP9r6nycue1dPfLeQiGM6581zsiI/view" // Replace with your actual Google Drive link
           target="_blank"
           rel="noopener noreferrer"
           className="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 transition-colors duration-300"

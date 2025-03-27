@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 
 type Project = {
   id: number;
@@ -18,10 +18,28 @@ const WorksSection = () => {
   const projects: Project[] = [
     {
       id: 1,
+      title: "City Spark",
+      description:
+        "A modern e-commerce platform with product categorization, search functionality and more",
+      image: "/src/assets/city-spark-hero.png",
+      techStack: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "React Query",
+        "React Hook Form",
+        "PostgreSQL",
+        "Prisma",
+        "Zod",
+      ],
+      liveUrl: "https://citysparke3.co.uk",
+    },
+    {
+      id: 2,
       title: "London Home Safety",
       description:
         "A web application designed to provide safety inspections, certifications & related services",
-      image: "/api/placeholder/600/400",
+      image: "/src/assets/london-home-safety-hero.png",
       techStack: [
         "Next.js",
         "TypeScript",
@@ -36,34 +54,14 @@ const WorksSection = () => {
         "Zod",
         "React Hook Form",
       ],
-      liveUrl: "#",
-      adminUrl: "#",
-    },
-    {
-      id: 2,
-      title: "City Spark",
-      description:
-        "A modern e-commerce platform with product categorization, search functionality and more",
-      image: "/api/placeholder/600/400",
-      techStack: [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "React Query",
-        "React Hook Form",
-        "PostgreSQL",
-        "Prisma",
-        "Zod",
-      ],
-      liveUrl: "#",
-      adminUrl: "#",
+      liveUrl: "https://londonhomesafety.co.uk",
     },
     {
       id: 3,
       title: "Easy Tax Return",
       description:
         "A digital solution for filling out and managing individual tax returns",
-      image: "/api/placeholder/600/400",
+      image: "/src/assets/easy-tax-return-hero.png",
       techStack: [
         "Next.js",
         "TypeScript",
@@ -74,7 +72,50 @@ const WorksSection = () => {
         "Zod",
         "jsPDF",
       ],
-      liveUrl: "#",
+      liveUrl: "https://easytaxreturn.com.bd",
+    },
+    {
+      id: 7,
+      title: "Parts Yard",
+      description:
+        "A motorcycle parts manufacturer platform with integrated payment system",
+      image: "/src/assets/partsyard-hero.png",
+      techStack: [
+        "React",
+        "MongoDB",
+        "Firebase Auth",
+        "Stripe Payment Gateway",
+        "Tailwind CSS",
+        "Express",
+      ],
+      liveUrl: "https://partsyard.web.app",
+    },
+    {
+      id: 5,
+      title: "Homelet Services",
+      description:
+        "A comprehensive property service platform with integrated contact form and spam protection",
+      image: "/src/assets/homelet-services-hero.png",
+      techStack: ["Astro", "Tailwind CSS", "React Hook Form", "Zod"],
+      liveUrl: "https://homeletservices.co.uk",
+    },
+    {
+      id: 5,
+      title: "Pure Power Electrical",
+      description:
+        "An electrician portfolio showcasing services and previous works",
+      image: "/src/assets/pure-power-hero.png",
+      techStack: ["HTML", "CSS", "WordPress", "PHP"],
+      liveUrl: "https://purepowerelectrical.co.uk",
+    },
+    {
+      id: 6,
+      title: "PJ Renovation",
+      description:
+        "A construction company portfolio featuring projects and services",
+      image: "/src/assets/pj-renovation-hero.png",
+      techStack: ["HTML", "CSS", "WordPress", "PHP"],
+      liveUrl: "https://pjrenovation.co.uk",
     },
   ];
 
@@ -127,6 +168,12 @@ const WorksSection = () => {
                 Works
               </span>
             </h2>
+
+            {/* Add this line */}
+            <p className="text-gray-400 text-right">
+              All graphical assets including logos, banners, posters, and UI/UX
+              designs were created by me.
+            </p>
           </motion.div>
 
           <motion.div
@@ -151,7 +198,7 @@ const WorksSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent" />
                 </div>
 
-                <div className="p-6 space-y-4">
+                <div className="p-6 space-y-4 relative z-20">
                   <h3 className="text-2xl font-semibold text-gray-100">
                     {project.title}
                   </h3>
@@ -169,30 +216,21 @@ const WorksSection = () => {
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-4 pt-4">
+                  <div className="flex items-center gap-4 pt-4 relative z-30">
                     <motion.a
                       href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors"
                       whileHover={{ x: 5 }}
                     >
                       <ExternalLink className="w-4 h-4" />
                       <span>Live Site</span>
                     </motion.a>
-
-                    {project.adminUrl && (
-                      <motion.a
-                        href={project.adminUrl}
-                        className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors"
-                        whileHover={{ x: 5 }}
-                      >
-                        <ArrowRight className="w-4 h-4" />
-                        <span>Admin Panel</span>
-                      </motion.a>
-                    )}
                   </div>
                 </div>
 
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10" />
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity blur-sm" />
                 </div>

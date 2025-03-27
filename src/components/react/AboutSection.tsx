@@ -1,4 +1,3 @@
-import React from "react";
 import { motion, type Variants } from "framer-motion";
 import { ArrowUpRight, Code2 } from "lucide-react";
 
@@ -46,6 +45,7 @@ const AboutSection = () => {
     "Prisma",
     "MUI",
     "Tailwind CSS",
+    "React Native",
     "Mongoose",
     "WordPress",
   ];
