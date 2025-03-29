@@ -1,5 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import { ArrowUpRight, Code2 } from "lucide-react";
+import ownImage from "../../assets/own-image.jpg";
 
 const AboutSection = () => {
   const containerVariants: Variants = {
@@ -105,9 +106,10 @@ const AboutSection = () => {
                     }}
                   >
                     <img
-                      src="/own-image.jpg"
+                      src={ownImage.src}
                       alt="Imran Kabir"
                       className="w-full h-full object-cover object-center rounded-lg"
+                      loading="lazy"
                     />
                     {/* Simplified overlay */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
