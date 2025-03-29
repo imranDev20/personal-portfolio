@@ -1,6 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import { ArrowUpRight, Code2 } from "lucide-react";
-import ownImage from "../../assets/own-image.jpg";
+import ownImage from "../../assets/own-image-min.jpg";
 
 const AboutSection = () => {
   const containerVariants: Variants = {
